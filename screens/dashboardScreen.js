@@ -1,15 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
 import WebService from '../services/WebService';
-import Autosuggest from 'react-autosuggest';
-import  MapView from 'react-native-maps';
+import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
+import Autocomplete from 'react-native-autocomplete-input';
 
 export default class Dashboard extends React.Component {
 
     state = {
         currentRegion: null,
-        allStations: []
+        allStations: [],
+        queriedStation: []
     }
 
     componentDidMount() {
@@ -20,8 +21,8 @@ export default class Dashboard extends React.Component {
                     currentRegion: {
                         latitude: position.coords.latitude,
                         longitude: position.coords.longitude,
-                        latitudeDelta: 0.03,
-                        longitudeDelta: 0.03,
+                        latitudeDelta: 0.01,
+                        longitudeDelta: 0.01,
                     }
                 });
                 this.getAllStations();
@@ -35,6 +36,7 @@ export default class Dashboard extends React.Component {
     render() {
         return (
             <View style={styles.container}>
+                {this.renderSearchBar()}
                 {this.renderMap()}
             </View>
         );
@@ -44,16 +46,54 @@ export default class Dashboard extends React.Component {
         console.log('renderCall', this.state.currentRegion);
         return (
             <MapView style={styles.map}
+                ref={(el) => (this.map = el)}
                 region={this.state.currentRegion}
                 showsUserLocation={true}
                 followsUserLocation={true}
                 showsMyLocationButton={true}
-                loadingEnabled={true}
-            >
+                loadingEnabled={true}>
                 {this.renderStations()}
-                <Text>Yash</Text>
+
             </MapView>
         );
+    }
+
+    renderSearchBar() {
+        console.log(this.state.queriedStation);
+
+        return (
+            <Autocomplete
+                autoCapitalize="none"
+                autoCorrect={false}
+                containerStyle={styles.autocompleteContainer}
+                inputContainerStyle={styles.searchInputContainer}
+                listStyle={styles.listContainerStyle}
+                data={this.state.queriedStation}
+                defaultValue={""}
+                onChangeText={(text) => {
+                    if (text.trim().length > 1) {
+                        this.getAllStations(text);
+                    }
+                    else {
+                        this.setState({ queriedStation: [] });
+                    }
+
+                }}
+                placeholder="Search Stations"
+                renderItem={(station) => (
+                    <TouchableOpacity onPress={this.searchStationPress.bind(this, station)}>
+                        <View style={styles.itemText}>
+                            <Text>{station.name}</Text>
+                        </View>
+                    </TouchableOpacity>
+                )}
+            />
+        );
+    }
+
+    searchStationPress(station){
+        this.setState({ queriedStation: [] });
+        this.map.animateToCoordinate({ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }, 2);
     }
 
     renderStations() {
@@ -74,10 +114,16 @@ export default class Dashboard extends React.Component {
         return stations;
     }
 
-    getAllStations() {
-        WebService.getInstance().getStations({}, (response) => {
+    getAllStations(searchTerm = null) {
+        let query = {};
+        if (searchTerm) {
+            query = { s: searchTerm };
+        }
+        console.log(query);
+
+        WebService.getInstance().getStations(query, (response) => {
             console.log(response);
-            this.setState({ allStations: response })
+            this.setState(searchTerm ? { queriedStation: response } : { allStations: response, queriedStation: [] });
         }, (error) => {
             console.log(error);
 
@@ -90,8 +136,6 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
     },
     map: {
         position: 'absolute',
@@ -99,5 +143,21 @@ const styles = StyleSheet.create({
         left: 0,
         right: 0,
         bottom: 0,
+    },
+    autocompleteContainer: {
+        margin: 20
+    },
+    itemText: {
+        fontSize: 15,
+        padding: 10,
+        marginLeft: 10,
+        marginRight: 10,
+        borderBottomWidth: 1,
+        borderBottomColor: '#cccccc'
+    },
+    listContainerStyle: {
+        height: 250
+    },
+    searchInputContainer: {
     }
 });

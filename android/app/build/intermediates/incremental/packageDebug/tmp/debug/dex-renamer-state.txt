@@ -1,0 +1,7 @@
+#Tue Nov 20 01:46:39 PST 2018
+base.0=/Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/build/intermediates/transforms/dexMerger/debug/0
+path.1=classes2.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/build/intermediates/transforms/dexMerger/debug/0

@@ -23,11 +23,11 @@ export default class WebService extends AxiosService {
     * Get Stations Call - Get all station lists api call
     * Takes success and failure operations
     *
-    * Optional params: query
+    * Optional params: searchTerms
     */
-    getStations(query, success, failure) {
+    getStations(searchTerms, success, failure) {
         var addition = "";
-        Object.keys(query).map((key) => {
+        Object.keys(searchTerms).map((key) => {
             addition += "&" + key + "=" + searchTerms[key];
         });
         this.getCall(URI.GET_ALL_STATIONS + "?" + addition, success, failure);

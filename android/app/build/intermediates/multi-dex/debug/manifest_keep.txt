@@ -1,0 +1,3 @@
+# Referenced at /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/build/intermediates/manifests/full/debug/AndroidManifest.xml:24
+-keep class com.volta.MainApplication { <init>(...); }
+
