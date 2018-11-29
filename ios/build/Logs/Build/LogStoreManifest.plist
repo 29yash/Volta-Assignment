@@ -35,6 +35,35 @@
 			<key>uniqueIdentifier</key>
 			<string>67C5D142-86D5-4EE1-957D-B171D04370E6</string>
 		</dict>
+		<key>ADF2C81E-802D-4DAA-8722-7C175D2A65B4</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>ADF2C81E-802D-4DAA-8722-7C175D2A65B4.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Volta project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Volta</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Volta with scheme Volta and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>565001928.586501</real>
+			<key>timeStoppedRecording</key>
+			<real>565001934.60287905</real>
+			<key>title</key>
+			<string>Building project Volta with scheme Volta and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>ADF2C81E-802D-4DAA-8722-7C175D2A65B4</string>
+		</dict>
 	</dict>
 </dict>
 </plist>

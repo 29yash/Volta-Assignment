@@ -1,15 +1,19 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import WebService from '../services/WebService';
 import MapView from 'react-native-maps';
-import { Marker } from 'react-native-maps';
+import { Marker, Callout } from 'react-native-maps';
 import Autocomplete from 'react-native-autocomplete-input';
+import Touchable from '../components/Touchable';
+import NetworkController from '../services/NetworkController';
+const dismissKeyboard = require('../components/dismissKeyboard');
 
 export default class Dashboard extends React.Component {
 
     state = {
         currentRegion: null,
         allStations: [],
+        selectedText:null,
         queriedStation: []
     }
 
@@ -27,8 +31,12 @@ export default class Dashboard extends React.Component {
                 });
                 this.getAllStations();
             },
-            (error) => this.setState({ error: error.message }),
-            { enableHighAccuracy: false, timeout: 200000, maximumAge: 1000 },
+            (error) => {
+                console.log(error);
+
+                this.setState({ error: error.message })
+            },
+            { enableHighAccuracy: false },
         );
     }
 
@@ -36,8 +44,8 @@ export default class Dashboard extends React.Component {
     render() {
         return (
             <View style={styles.container}>
-                {this.renderSearchBar()}
                 {this.renderMap()}
+                {this.renderSearchBar()}
             </View>
         );
     }
@@ -45,24 +53,23 @@ export default class Dashboard extends React.Component {
     renderMap() {
         console.log('renderCall', this.state.currentRegion);
         return (
-            <MapView style={styles.map}
-                ref={(el) => (this.map = el)}
-                region={this.state.currentRegion}
-                showsUserLocation={true}
-                followsUserLocation={true}
-                showsMyLocationButton={true}
-                loadingEnabled={true}>
-                {this.renderStations()}
-
-            </MapView>
+                <MapView style={styles.map}
+                    ref={(el) => (this.map = el)}
+                    region={this.state.currentRegion}
+                    showsUserLocation={true}
+                    followsUserLocation={true}
+                    showsMyLocationButton={true}
+                    loadingEnabled={true}>
+                    {this.renderStations()}
+                </MapView>
         );
     }
 
     renderSearchBar() {
         console.log(this.state.queriedStation);
-
         return (
             <Autocomplete
+                value={this.state.selectedText}
                 autoCapitalize="none"
                 autoCorrect={false}
                 containerStyle={styles.autocompleteContainer}
@@ -71,6 +78,7 @@ export default class Dashboard extends React.Component {
                 data={this.state.queriedStation}
                 defaultValue={""}
                 onChangeText={(text) => {
+                    this.setState({selectedText: text})
                     if (text.trim().length > 1) {
                         this.getAllStations(text);
                     }
@@ -81,19 +89,23 @@ export default class Dashboard extends React.Component {
                 }}
                 placeholder="Search Stations"
                 renderItem={(station) => (
-                    <TouchableOpacity onPress={this.searchStationPress.bind(this, station)}>
+                    <Touchable onPress={this.searchStationPress.bind(this, station)}>
                         <View style={styles.itemText}>
                             <Text>{station.name}</Text>
                         </View>
-                    </TouchableOpacity>
+                    </Touchable>
                 )}
             />
         );
     }
 
-    searchStationPress(station){
-        this.setState({ queriedStation: [] });
-        this.map.animateToCoordinate({ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }, 2);
+    searchStationPress(station) {
+        dismissKeyboard();
+        console.log('Station pressed', station);
+        setTimeout(()=>{
+            this.map.animateToCoordinate({ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }, 2);
+        }, 50)
+        this.setState({ queriedStation: [], selectedText: station.name });
     }
 
     renderStations() {
@@ -106,8 +118,8 @@ export default class Dashboard extends React.Component {
                         coordinate={{ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }}
                         title={station.name}
                         description={station.street_address}
-                        image={require('../assets/marker.png')}
-                    />
+                        image={require('../assets/marker.png')}>
+                    </Marker>
                 )
             }
         });
@@ -119,15 +131,14 @@ export default class Dashboard extends React.Component {
         if (searchTerm) {
             query = { s: searchTerm };
         }
-        console.log(query);
-
         WebService.getInstance().getStations(query, (response) => {
             console.log(response);
             this.setState(searchTerm ? { queriedStation: response } : { allStations: response, queriedStation: [] });
         }, (error) => {
             console.log(error);
 
-        })
+        });
+
     }
 
 }
@@ -145,6 +156,12 @@ const styles = StyleSheet.create({
         bottom: 0,
     },
     autocompleteContainer: {
+        flex: 1,
+        left: 0,
+        position: 'absolute',
+        right: 0,
+        top: 0,
+        zIndex: 1,
         margin: 20
     },
     itemText: {
@@ -159,5 +176,8 @@ const styles = StyleSheet.create({
         height: 250
     },
     searchInputContainer: {
+    },
+    marker: {
+
     }
 });

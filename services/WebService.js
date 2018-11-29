@@ -30,6 +30,6 @@ export default class WebService extends AxiosService {
         Object.keys(searchTerms).map((key) => {
             addition += "&" + key + "=" + searchTerms[key];
         });
-        this.getCall(URI.GET_ALL_STATIONS + "?" + addition, success, failure);
+        this.getCall(URI.GET_ALL_SITES + "?" + addition, success, failure);
     }
 }
