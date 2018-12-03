@@ -8,10 +8,13 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "geolib": "^2.0.24",
+    "prop-types": "^15.6.2",
     "react": "16.6.1",
     "react-native": "0.57.5",
     "react-native-autocomplete-input": "^3.6.0",
     "react-native-maps": "^0.22.1",
+    "react-native-progress": "^3.5.0",
     "react-native-router-flux": "^4.0.6"
   },
   "devDependencies": {

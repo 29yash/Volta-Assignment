@@ -7,7 +7,7 @@ const Routing = () => {
     return (
         <Router>
             <Scene key="root">
-                <Scene key="dashboard" component={Dashboard} title="Dashboard"/>
+                <Scene key="dashboard" component={Dashboard} headerMode="none" title="Volta"/>
             </Scene>
         </Router>
     );

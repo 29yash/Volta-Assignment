@@ -2,19 +2,26 @@ import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import WebService from '../services/WebService';
 import MapView from 'react-native-maps';
-import { Marker, Callout } from 'react-native-maps';
+import { Marker } from 'react-native-maps';
 import Autocomplete from 'react-native-autocomplete-input';
 import Touchable from '../components/Touchable';
-import NetworkController from '../services/NetworkController';
+import Drawer from '../components/Drawer';
+import geolib from 'geolib';
+import * as Progress from 'react-native-progress';
 const dismissKeyboard = require('../components/dismissKeyboard');
+
 
 export default class Dashboard extends React.Component {
 
     state = {
         currentRegion: null,
         allStations: [],
-        selectedText:null,
-        queriedStation: []
+        selectedText: null,
+        queriedStation: [],
+        selectedStation: null,
+        nearByStation: null,
+        isStationSelected: false,
+        allSiteMetrics: []
     }
 
     componentDidMount() {
@@ -30,6 +37,7 @@ export default class Dashboard extends React.Component {
                     }
                 });
                 this.getAllStations();
+                this.getAllSiteMetrics();
             },
             (error) => {
                 console.log(error);
@@ -50,9 +58,69 @@ export default class Dashboard extends React.Component {
         );
     }
 
+    renderDrawer() {
+        return (
+            <Drawer teaserHeight={200} isOpen={true}>
+                <View style={styles.drawerContent}>
+                    {this.state.isStationSelected ? this.renderStationInfo() : this.showNearBy()}
+                </View>
+            </Drawer>
+        )
+    }
+
+    showNearBy() {
+        if (this.state.nearByStation) {
+            return (
+                <View style={styles.showStation}>
+                    <View style={{ flexDirection: "row", alignItems: "center" }}>
+                        <Text style={styles.nearestText}>Nearest Station</Text>
+                        <Text style={styles.nearStationName} ellipsizeMode={"tail"} numberOfLines={1}>{this.state.nearByStation.name}</Text>
+                    </View>
+                    <Touchable style={styles.directionButton}>
+                        <View style={{ alignItems: 'center' }}>
+                            <Text style={{ color: 'white' }}>Directions</Text>
+                            <Text style={{ color: 'white' }}>{this.state.nearByDistance + " meters"}</Text>
+                        </View>
+                    </Touchable>
+                </View>
+            );
+        }
+        else {
+            <View style={styles.showStation}>
+                <Text style={styles.stationName}>No Nearest Station</Text>
+            </View>
+        }
+    }
+
+    renderStationInfo() {
+        if (this.state.selectedStation) {
+            let stationMetrics = this.state.allSiteMetrics.find((site) => {
+                return site.id === this.state.selectedStation.id;
+            });
+            let availableCharger = stationMetrics.chargers[0].available;
+            let totalCharger = stationMetrics.chargers[0].total;
+            return (
+                <View style={styles.showStation}>
+                    <Text style={styles.stationName} ellipsizeMode={"tail"} numberOfLines={1}>{this.state.selectedStation.name}</Text>
+                    <Progress.Bar showsText={true} progress={availableCharger/totalCharger} width={300} height={20} color="#00c8ef" />
+                    <Text style={styles.progessBarText}>{availableCharger +' OF '+ totalCharger + ' CHARGERS AVAILABLE'}</Text>
+                    <Touchable style={styles.directionButton}>
+                        <Text style={{ color: 'white' }}>Directions</Text>
+                    </Touchable>
+                </View>
+            );
+        }
+        else {
+            <View style={styles.showStation}>
+                <Text style={styles.stationName}>Station Information Not Available</Text>
+            </View>
+        }
+    }
+
     renderMap() {
         console.log('renderCall', this.state.currentRegion);
         return (
+            <View style={styles.container}>
                 <MapView style={styles.map}
                     ref={(el) => (this.map = el)}
                     region={this.state.currentRegion}
@@ -62,11 +130,12 @@ export default class Dashboard extends React.Component {
                     loadingEnabled={true}>
                     {this.renderStations()}
                 </MapView>
+                {this.renderDrawer()}
+            </View>
         );
     }
 
     renderSearchBar() {
-        console.log(this.state.queriedStation);
         return (
             <Autocomplete
                 value={this.state.selectedText}
@@ -78,12 +147,12 @@ export default class Dashboard extends React.Component {
                 data={this.state.queriedStation}
                 defaultValue={""}
                 onChangeText={(text) => {
-                    this.setState({selectedText: text})
-                    if (text.trim().length > 1) {
+                    this.setState({ selectedText: text })
+                    if (text.trim().length > 2) {
                         this.getAllStations(text);
                     }
                     else {
-                        this.setState({ queriedStation: [] });
+                        this.setState({ queriedStation: [], isStationSelected: false, selectedStation: null });
                     }
 
                 }}
@@ -101,11 +170,10 @@ export default class Dashboard extends React.Component {
 
     searchStationPress(station) {
         dismissKeyboard();
-        console.log('Station pressed', station);
-        setTimeout(()=>{
+        setTimeout(() => {
             this.map.animateToCoordinate({ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }, 2);
         }, 50)
-        this.setState({ queriedStation: [], selectedText: station.name });
+        this.setState({ queriedStation: [], selectedText: station.name, selectedStation: station, isStationSelected: true });
     }
 
     renderStations() {
@@ -134,11 +202,34 @@ export default class Dashboard extends React.Component {
         WebService.getInstance().getStations(query, (response) => {
             console.log(response);
             this.setState(searchTerm ? { queriedStation: response } : { allStations: response, queriedStation: [] });
+            if (!searchTerm) {
+                this.findNearByStations(response);
+            }
         }, (error) => {
             console.log(error);
-
         });
 
+    }
+
+    getAllSiteMetrics() {
+        WebService.getInstance().getAllSiteMetrics((response) => {
+            console.log(response);
+            this.setState({ allSiteMetrics: response });
+        }, (error) => {
+            console.log(error);
+        });
+    }
+
+    findNearByStations(stations) {
+        let stationCords = []
+        if (stations) {
+            stations.map((station) => {
+                let latLng = { latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] };
+                stationCords.push(latLng);
+            });
+            let nearByIndex = geolib.findNearest(this.state.currentRegion, stationCords, 1);
+            this.setState({ nearByStation: stations[nearByIndex.key], nearByDistance: nearByIndex.distance });
+        }
     }
 
 }
@@ -175,9 +266,46 @@ const styles = StyleSheet.create({
     listContainerStyle: {
         height: 250
     },
-    searchInputContainer: {
+    drawerContent: {
+        flex: 1,
+        margin: 15
     },
-    marker: {
-
+    showStation: {
+        flex: 1,
+        alignItems: "center",
+    },
+    stationName: {
+        fontSize: 20,
+        fontWeight: "500",
+        padding: 10,
+        marginBottom: 5
+    },
+    progessBarText: {
+        fontSize: 13,
+        color: "#9b9b97",
+        marginTop:10
+    },
+    nearestText: {
+        fontSize: 15,
+        color: "#9b9b97",
+        fontWeight: "bold"
+    },
+    nearStationName: {
+        fontSize: 17,
+        fontWeight: "500",
+        marginLeft: 10
+    },
+    buttonText: {
+        fontSize: 17,
+        fontWeight: '500',
+        color: 'white'
+    },
+    directionButton: {
+        backgroundColor: "#fc5ead",
+        marginTop: 15,
+        padding: 15,
+        borderRadius: 5,
+        width: "80%",
+        alignItems: "center"
     }
 });

@@ -32,4 +32,8 @@ export default class WebService extends AxiosService {
         });
         this.getCall(URI.GET_ALL_SITES + "?" + addition, success, failure);
     }
+
+    getAllSiteMetrics(success, failure){
+        this.getCall(URI.GET_ALL_SITES_METRICS, success, failure);
+    }
 }
