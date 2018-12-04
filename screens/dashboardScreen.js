@@ -8,6 +8,8 @@ import Touchable from '../components/Touchable';
 import Drawer from '../components/Drawer';
 import geolib from 'geolib';
 import * as Progress from 'react-native-progress';
+import openMap from 'react-native-open-maps';
+import LaunchNavigator from 'react-native-launch-navigator';
 const dismissKeyboard = require('../components/dismissKeyboard');
 
 
@@ -68,6 +70,12 @@ export default class Dashboard extends React.Component {
         )
     }
 
+    openDirections(station) {
+        // openMap({ end: station.street_address });
+        LaunchNavigator.navigate(station.location.coordinates.reverse()).then(() => console.log("Launched navigator"))
+            .catch((err) => console.error("Error launching navigator: " + err));
+    }
+
     showNearBy() {
         if (this.state.nearByStation) {
             return (
@@ -76,7 +84,7 @@ export default class Dashboard extends React.Component {
                         <Text style={styles.nearestText}>Nearest Station</Text>
                         <Text style={styles.nearStationName} ellipsizeMode={"tail"} numberOfLines={1}>{this.state.nearByStation.name}</Text>
                     </View>
-                    <Touchable style={styles.directionButton}>
+                    <Touchable style={styles.directionButton} onPress={this.openDirections.bind(this, this.state.nearByStation)}>
                         <View style={{ alignItems: 'center' }}>
                             <Text style={{ color: 'white' }}>Directions</Text>
                             <Text style={{ color: 'white' }}>{this.state.nearByDistance + " meters"}</Text>
@@ -102,9 +110,9 @@ export default class Dashboard extends React.Component {
             return (
                 <View style={styles.showStation}>
                     <Text style={styles.stationName} ellipsizeMode={"tail"} numberOfLines={1}>{this.state.selectedStation.name}</Text>
-                    <Progress.Bar showsText={true} progress={availableCharger/totalCharger} width={300} height={20} color="#00c8ef" />
-                    <Text style={styles.progessBarText}>{availableCharger +' OF '+ totalCharger + ' CHARGERS AVAILABLE'}</Text>
-                    <Touchable style={styles.directionButton}>
+                    <Progress.Bar showsText={true} progress={availableCharger / totalCharger} width={300} height={20} color="#00c8ef" />
+                    <Text style={styles.progessBarText}>{availableCharger + ' OF ' + totalCharger + ' CHARGERS AVAILABLE'}</Text>
+                    <Touchable style={styles.directionButton} onPress={this.openDirections.bind(this, this.state.selectedStation)}>
                         <Text style={{ color: 'white' }}>Directions</Text>
                     </Touchable>
                 </View>
@@ -283,7 +291,7 @@ const styles = StyleSheet.create({
     progessBarText: {
         fontSize: 13,
         color: "#9b9b97",
-        marginTop:10
+        marginTop: 10
     },
     nearestText: {
         fontSize: 15,

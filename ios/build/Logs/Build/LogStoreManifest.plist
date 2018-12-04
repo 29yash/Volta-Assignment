@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>390FAB73-EF3A-4B5F-AC45-6B25ACCAA6A6</key>
+		<key>11D7069B-E5B7-48A4-A315-B3A1993CC6F9</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>390FAB73-EF3A-4B5F-AC45-6B25ACCAA6A6.xcactivitylog</string>
+			<string>11D7069B-E5B7-48A4-A315-B3A1993CC6F9.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,13 +27,42 @@
 			<key>signature</key>
 			<string>Building project Volta with scheme Volta and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>565532945.40904701</real>
+			<real>565581280.33922994</real>
 			<key>timeStoppedRecording</key>
-			<real>565532950.28638697</real>
+			<real>565581286.90921402</real>
 			<key>title</key>
 			<string>Building project Volta with scheme Volta and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>390FAB73-EF3A-4B5F-AC45-6B25ACCAA6A6</string>
+			<string>11D7069B-E5B7-48A4-A315-B3A1993CC6F9</string>
+		</dict>
+		<key>944E9828-E5DA-4CE0-99DC-B61E4E93243E</key>
+		<dict>
+			<key>className</key>
+			<string>IDECommandLineBuildLog</string>
+			<key>documentTypeString</key>
+			<string>&lt;nil&gt;</string>
+			<key>domainType</key>
+			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
+			<key>fileName</key>
+			<string>944E9828-E5DA-4CE0-99DC-B61E4E93243E.xcactivitylog</string>
+			<key>highLevelStatus</key>
+			<string>W</string>
+			<key>schemeIdentifier-containerName</key>
+			<string>Volta project</string>
+			<key>schemeIdentifier-schemeName</key>
+			<string>Volta</string>
+			<key>schemeIdentifier-sharedScheme</key>
+			<integer>1</integer>
+			<key>signature</key>
+			<string>Building project Volta with scheme Volta and configuration Debug</string>
+			<key>timeStartedRecording</key>
+			<real>565534561.06277001</real>
+			<key>timeStoppedRecording</key>
+			<real>565534569.71086502</real>
+			<key>title</key>
+			<string>Building project Volta with scheme Volta and configuration Debug</string>
+			<key>uniqueIdentifier</key>
+			<string>944E9828-E5DA-4CE0-99DC-B61E4E93243E</string>
 		</dict>
 	</dict>
 </dict>

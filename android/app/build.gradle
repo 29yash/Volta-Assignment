@@ -138,6 +138,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-launch-navigator')
     compile project(':react-native-maps')
     compile 'com.google.android.gms:play-services-base:+'
     compile 'com.google.android.gms:play-services-maps:+'
