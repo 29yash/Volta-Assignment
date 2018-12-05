@@ -11,7 +11,7 @@ import LaunchNavigator from 'react-native-launch-navigator';
 import NetworkController from '../services/NetworkController';
 const dismissKeyboard = require('../components/dismissKeyboard');
 const { width, height } = Dimensions.get('window');
-
+const MarkerLogo = require('../assets/marker.png');
 
 export default class Dashboard extends React.Component {
 
@@ -57,7 +57,7 @@ export default class Dashboard extends React.Component {
                 console.log(error);
                 this.setState({ error: error.message })
             },
-            { enableHighAccuracy: true },
+            { enableHighAccuracy: false },
         );
     }
 
@@ -216,9 +216,13 @@ export default class Dashboard extends React.Component {
                         key={index}
                         coordinate={{ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }}
                         title={station.name}
-                        onPress={() => { this.searchStationPress(station) }}
+                        onPress={() => { 
+                            if( !this.state.selectedStation || (this.state.selectedStation && this.state.selectedStation.id != station.id)){
+                                this.searchStationPress(station) 
+                            }
+                        }}
                         description={station.street_address}
-                        image={require('../assets/marker.png')}>
+                        image={MarkerLogo}>
                     </Marker>
                 )
             }

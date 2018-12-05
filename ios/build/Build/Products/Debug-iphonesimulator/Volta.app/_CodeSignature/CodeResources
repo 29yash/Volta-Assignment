@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		IONVSdvc6a551Wba6LvVEv11Kv4=
+		WfgOrO5iiQ/s9d5K6yBkWD3YYoU=
 		</data>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
 		<data>
@@ -39,7 +39,11 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		ldFc5krek3w9g7w6mzBDdS8TycQ=
+		jok/7/Ydj3zMBhlJrtoCUoQ0qQs=
+		</data>
+		<key>LaunchImage-700-568h@2x.png</key>
+		<data>
+		jUzAVDZErJq8r4xRQMYF5Kc4BgE=
 		</data>
 		<key>PkgInfo</key>
 		<data>
@@ -72,11 +76,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			IONVSdvc6a551Wba6LvVEv11Kv4=
+			WfgOrO5iiQ/s9d5K6yBkWD3YYoU=
 			</data>
 			<key>hash2</key>
 			<data>
-			S2aKGd1YrWWqFBDAr+4erLgD4jIbUR8jzYRWPEZNfPc=
+			cZavwMjK+idw+gvrwosGVnK9VZznsFw53NhB4bhh8Pg=
 			</data>
 		</dict>
 		<key>Frameworks/XCTest.framework/Info.plist</key>
@@ -145,6 +149,17 @@
 			<key>hash2</key>
 			<data>
 			fpOt7HUuqY2ezAoc4Q2s/uCD+QmTqmstpUSS9I8nCoE=
+			</data>
+		</dict>
+		<key>LaunchImage-700-568h@2x.png</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			jUzAVDZErJq8r4xRQMYF5Kc4BgE=
+			</data>
+			<key>hash2</key>
+			<data>
+			zk4M8Nt4RUdrZyscD2Fls3DuhrSZpwnGFwXIWTdHmrw=
 			</data>
 		</dict>
 		<key>PlugIns/VoltaTests.xctest.dSYM/Contents/Info.plist</key>
