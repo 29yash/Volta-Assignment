@@ -31,6 +31,9 @@ export default class Dashboard extends React.Component {
         this.setNetworkCallback();
     }
 
+    /**
+     * Network Controller Callback when network toggles
+     */
     setNetworkCallback() {
         NetworkController.getController().callBack = () => {
             this.getAllStations();
@@ -38,6 +41,9 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Method to get user current location
+     */
     getUserLocation() {
         navigator.geolocation.getCurrentPosition(
             (position) => {
@@ -73,6 +79,9 @@ export default class Dashboard extends React.Component {
         );
     }
 
+    /**
+     * Method to render bottom drawer 
+     */
     renderDrawer() {
         if (NetworkController.getController().netstate) {
             return (
@@ -94,11 +103,18 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Method to open directions to the specific station on Google/Apple Maps
+     * @param {} station 
+     */
     openDirections(station) {
         LaunchNavigator.navigate([station.location.coordinates[1], station.location.coordinates[0]]).then(() => console.log("Launched navigator"))
             .catch((err) => console.error("Error launching navigator: " + err));
     }
 
+    /**
+     * Method to display the near by station user
+     */
     showNearBy() {
         if (this.state.nearByStation) {
             return (
@@ -123,6 +139,9 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Method to render information metrics of selected station
+     */
     renderStationInfo() {
         if (this.state.selectedStation) {
             let stationMetrics = this.state.allSiteMetrics.find((site) => {
@@ -148,6 +167,9 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Method to Map View for rendering
+     */
     renderMap() {
         console.log('renderCall', this.state.currentRegion);
         return (
@@ -166,6 +188,9 @@ export default class Dashboard extends React.Component {
         );
     }
 
+    /**
+     * Method to render search bar for searching station
+     */
     renderSearchBar() {
         return (
             <Autocomplete
@@ -199,6 +224,10 @@ export default class Dashboard extends React.Component {
         );
     }
 
+    /**
+     * Method to be call when particular station is selected
+     * @param {} station 
+     */
     searchStationPress(station) {
         dismissKeyboard();
         setTimeout(() => {
@@ -207,6 +236,9 @@ export default class Dashboard extends React.Component {
         this.setState({ queriedStation: [], selectedText: station.name, selectedStation: station, isStationSelected: true });
     }
 
+    /**
+     * Method to render Markers on the cordinates of stations
+     */
     renderStations() {
         let stations = [];
         this.state.allStations.map((station, index) => {
@@ -230,6 +262,10 @@ export default class Dashboard extends React.Component {
         return stations;
     }
 
+    /**
+     * Service call for Getting the list of station based on search query
+     * @param {*} searchTerm 
+     */
     getAllStations(searchTerm = null) {
         if (NetworkController.getController().netstate) {
             let query = {};
@@ -248,6 +284,9 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Service call to get the site meterics of all sites
+     */
     getAllSiteMetrics() {
         if (NetworkController.getController().netstate) {
             WebService.getInstance().getAllSiteMetrics((response) => {
@@ -259,6 +298,10 @@ export default class Dashboard extends React.Component {
         }
     }
 
+    /**
+     * Method to find the nearest station from current location of user
+     * @param {} stations 
+     */
     findNearByStations(stations) {
         let stationCords = []
         if (stations) {
