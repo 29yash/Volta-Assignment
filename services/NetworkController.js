@@ -43,13 +43,6 @@ export default class NetworkController {
 			if (this.block) {
         this.block();
       }
-      if (!this.isFirstTime) {
-
-      }
-      else {
-        this.isFirstTime = false;
-      }
-      this.timePast = 0;
 		}
 	}
 

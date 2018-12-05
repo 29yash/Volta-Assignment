@@ -6,7 +6,7 @@
 	<integer>9</integer>
 	<key>logs</key>
 	<dict>
-		<key>11D7069B-E5B7-48A4-A315-B3A1993CC6F9</key>
+		<key>296CDE25-DCF6-42BC-93FF-59C361DFAC68</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -15,7 +15,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>11D7069B-E5B7-48A4-A315-B3A1993CC6F9.xcactivitylog</string>
+			<string>296CDE25-DCF6-42BC-93FF-59C361DFAC68.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -27,15 +27,15 @@
 			<key>signature</key>
 			<string>Building project Volta with scheme Volta and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>565581280.33922994</real>
+			<real>565672895.03036594</real>
 			<key>timeStoppedRecording</key>
-			<real>565581286.90921402</real>
+			<real>565672895.84467196</real>
 			<key>title</key>
 			<string>Building project Volta with scheme Volta and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>11D7069B-E5B7-48A4-A315-B3A1993CC6F9</string>
+			<string>296CDE25-DCF6-42BC-93FF-59C361DFAC68</string>
 		</dict>
-		<key>944E9828-E5DA-4CE0-99DC-B61E4E93243E</key>
+		<key>FBA91741-60EC-444B-8EF9-C57315D693A0</key>
 		<dict>
 			<key>className</key>
 			<string>IDECommandLineBuildLog</string>
@@ -44,7 +44,7 @@
 			<key>domainType</key>
 			<string>Xcode.IDEActivityLogDomainType.DebugLog</string>
 			<key>fileName</key>
-			<string>944E9828-E5DA-4CE0-99DC-B61E4E93243E.xcactivitylog</string>
+			<string>FBA91741-60EC-444B-8EF9-C57315D693A0.xcactivitylog</string>
 			<key>highLevelStatus</key>
 			<string>W</string>
 			<key>schemeIdentifier-containerName</key>
@@ -56,13 +56,13 @@
 			<key>signature</key>
 			<string>Building project Volta with scheme Volta and configuration Debug</string>
 			<key>timeStartedRecording</key>
-			<real>565534561.06277001</real>
+			<real>565673461.08570695</real>
 			<key>timeStoppedRecording</key>
-			<real>565534569.71086502</real>
+			<real>565673462.04332101</real>
 			<key>title</key>
 			<string>Building project Volta with scheme Volta and configuration Debug</string>
 			<key>uniqueIdentifier</key>
-			<string>944E9828-E5DA-4CE0-99DC-B61E4E93243E</string>
+			<string>FBA91741-60EC-444B-8EF9-C57315D693A0</string>
 		</dict>
 	</dict>
 </dict>

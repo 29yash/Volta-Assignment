@@ -1,16 +1,16 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Dimensions } from 'react-native';
 import WebService from '../services/WebService';
 import MapView from 'react-native-maps';
 import { Marker } from 'react-native-maps';
 import Autocomplete from 'react-native-autocomplete-input';
 import Touchable from '../components/Touchable';
-import Drawer from '../components/Drawer';
 import geolib from 'geolib';
 import * as Progress from 'react-native-progress';
-import openMap from 'react-native-open-maps';
 import LaunchNavigator from 'react-native-launch-navigator';
+import NetworkController from '../services/NetworkController';
 const dismissKeyboard = require('../components/dismissKeyboard');
+const { width, height } = Dimensions.get('window');
 
 
 export default class Dashboard extends React.Component {
@@ -27,6 +27,18 @@ export default class Dashboard extends React.Component {
     }
 
     componentDidMount() {
+        this.getUserLocation();
+        this.setNetworkCallback();
+    }
+
+    setNetworkCallback() {
+        NetworkController.getController().callBack = () => {
+            this.getAllStations();
+            this.getAllSiteMetrics()
+        }
+    }
+
+    getUserLocation() {
         navigator.geolocation.getCurrentPosition(
             (position) => {
                 console.log(position);
@@ -43,15 +55,16 @@ export default class Dashboard extends React.Component {
             },
             (error) => {
                 console.log(error);
-
                 this.setState({ error: error.message })
             },
-            { enableHighAccuracy: false },
+            { enableHighAccuracy: true },
         );
     }
 
 
+
     render() {
+        console.log(NetworkController.getController().netstate);
         return (
             <View style={styles.container}>
                 {this.renderMap()}
@@ -61,18 +74,28 @@ export default class Dashboard extends React.Component {
     }
 
     renderDrawer() {
-        return (
-            <Drawer teaserHeight={200} isOpen={true}>
+        if (NetworkController.getController().netstate) {
+            return (
                 <View style={styles.drawerContent}>
                     {this.state.isStationSelected ? this.renderStationInfo() : this.showNearBy()}
                 </View>
-            </Drawer>
-        )
+            );
+        }
+        else {
+            return (
+                <View style={styles.drawerContent}>
+                    <View style={styles.showStation}>
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            <Text style={[styles.nearStationName, {color: 'red'}]} ellipsizeMode={"tail"} numberOfLines={1}>Network Not Available</Text>
+                        </View>
+                    </View>
+                </View>
+            );
+        }
     }
 
     openDirections(station) {
-        // openMap({ end: station.street_address });
-        LaunchNavigator.navigate(station.location.coordinates.reverse()).then(() => console.log("Launched navigator"))
+        LaunchNavigator.navigate([station.location.coordinates[1], station.location.coordinates[0]]).then(() => console.log("Launched navigator"))
             .catch((err) => console.error("Error launching navigator: " + err));
     }
 
@@ -193,6 +216,7 @@ export default class Dashboard extends React.Component {
                         key={index}
                         coordinate={{ latitude: station.location.coordinates[1], longitude: station.location.coordinates[0] }}
                         title={station.name}
+                        onPress={() => { this.searchStationPress(station) }}
                         description={station.street_address}
                         image={require('../assets/marker.png')}>
                     </Marker>
@@ -203,29 +227,32 @@ export default class Dashboard extends React.Component {
     }
 
     getAllStations(searchTerm = null) {
-        let query = {};
-        if (searchTerm) {
-            query = { s: searchTerm };
-        }
-        WebService.getInstance().getStations(query, (response) => {
-            console.log(response);
-            this.setState(searchTerm ? { queriedStation: response } : { allStations: response, queriedStation: [] });
-            if (!searchTerm) {
-                this.findNearByStations(response);
+        if (NetworkController.getController().netstate) {
+            let query = {};
+            if (searchTerm) {
+                query = { s: searchTerm };
             }
-        }, (error) => {
-            console.log(error);
-        });
-
+            WebService.getInstance().getStations(query, (response) => {
+                console.log(response);
+                this.setState(searchTerm ? { queriedStation: response } : { allStations: response, queriedStation: [] });
+                if (!searchTerm) {
+                    this.findNearByStations(response);
+                }
+            }, (error) => {
+                console.log(error);
+            });
+        }
     }
 
     getAllSiteMetrics() {
-        WebService.getInstance().getAllSiteMetrics((response) => {
-            console.log(response);
-            this.setState({ allSiteMetrics: response });
-        }, (error) => {
-            console.log(error);
-        });
+        if (NetworkController.getController().netstate) {
+            WebService.getInstance().getAllSiteMetrics((response) => {
+                console.log(response);
+                this.setState({ allSiteMetrics: response });
+            }, (error) => {
+                console.log(error);
+            });
+        }
     }
 
     findNearByStations(stations) {
@@ -272,11 +299,15 @@ const styles = StyleSheet.create({
         borderBottomColor: '#cccccc'
     },
     listContainerStyle: {
-        height: 250
+        height: 180
     },
     drawerContent: {
         flex: 1,
-        margin: 15
+        width,
+        backgroundColor: 'white',
+        position: 'absolute',
+        bottom: 0,
+        padding: 20
     },
     showStation: {
         flex: 1,

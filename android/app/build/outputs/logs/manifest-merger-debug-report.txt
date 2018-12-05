@@ -4,12 +4,14 @@ ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/ap
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
+MERGED from [:react-native-launch-navigator] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-launch-navigator/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-maps] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-maps/lib/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:17:1-32:12
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/0bd9d05621b0352652f411afd8971a37/AndroidManifest.xml:17:1-29:12
 MERGED from [com.android.support:multidex:1.0.2] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/multidex-1.0.2.aar/574444acc1e78b739c353c3c9e461d6b/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.react:react-native:0.57.5] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/react-native-0.57.5.aar/4247e1d4a722c87fa00345224a038c7d/AndroidManifest.xml:2:1-15:12
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/489738f084b352cae4a61170a7cf6f07/AndroidManifest.xml:17:1-22:12
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/fcd7f466dbf9dc9416ec1c016b066d46/AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/05116b7ad8fe4eadaa7c2a45705894cb/AndroidManifest.xml:2:1-13:12
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/17ec65f6d2a37ca8d6ad87bee98dffe6/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-vector-drawable:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.1.1.aar/c5781e908cce65bae2a0072259e4a6f2/AndroidManifest.xml:17:1-22:12
@@ -22,7 +24,6 @@ MERGED from [com.android.support:support-core-ui:27.1.1] /Users/yashmahajan/.gra
 MERGED from [com.android.support:support-core-utils:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.1.1.aar/e69f9b835245c01e4feb28abe27804f3/AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-compat:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/a8631b1f0ef64b2527fd3b3f78cb6420/AndroidManifest.xml:17:1-22:12
 MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/760dc1fe0defd2e2fec99d92d472ec0d/AndroidManifest.xml:2:1-9:12
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/fcd7f466dbf9dc9416ec1c016b066d46/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/54c9bc9f3cfee9b9b418a1ccc34575df/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/891047c6ab24a45ae0bcb4d81eb821de/AndroidManifest.xml:2:1-9:12
 MERGED from [com.facebook.fresco:imagepipeline-base:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-base-1.10.0.aar/5ef054ebbfd0100904d9ae1355a1c402/AndroidManifest.xml:2:1-9:12
@@ -115,7 +116,7 @@ ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/ap
 	android:label
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:20:9-41
 	android:windowSoftInputMode
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:22:9-51
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:22:9-48
 	android:configChanges
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:21:9-79
 	android:name
@@ -138,6 +139,8 @@ uses-sdk
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
+MERGED from [:react-native-launch-navigator] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-launch-navigator/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-43
+MERGED from [:react-native-launch-navigator] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-launch-navigator/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-43
 MERGED from [:react-native-maps] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-maps/lib/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [:react-native-maps] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-maps/lib/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:20:5-44
@@ -150,6 +153,8 @@ MERGED from [com.facebook.react:react-native:0.57.5] /Users/yashmahajan/.gradle/
 MERGED from [com.facebook.react:react-native:0.57.5] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/react-native-0.57.5.aar/4247e1d4a722c87fa00345224a038c7d/AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/489738f084b352cae4a61170a7cf6f07/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:appcompat-v7:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.1.1.aar/489738f084b352cae4a61170a7cf6f07/AndroidManifest.xml:20:5-44
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/fcd7f466dbf9dc9416ec1c016b066d46/AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/fcd7f466dbf9dc9416ec1c016b066d46/AndroidManifest.xml:5:5-7:41
 MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/05116b7ad8fe4eadaa7c2a45705894cb/AndroidManifest.xml:5:5-43
 MERGED from [com.google.maps.android:android-maps-utils:0.5] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/android-maps-utils-0.5.aar/05116b7ad8fe4eadaa7c2a45705894cb/AndroidManifest.xml:5:5-43
 MERGED from [com.android.support:animated-vector-drawable:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.1.1.aar/17ec65f6d2a37ca8d6ad87bee98dffe6/AndroidManifest.xml:20:5-44
@@ -174,8 +179,6 @@ MERGED from [com.android.support:support-compat:27.1.1] /Users/yashmahajan/.grad
 MERGED from [com.android.support:support-compat:27.1.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/support-compat-27.1.1.aar/a8631b1f0ef64b2527fd3b3f78cb6420/AndroidManifest.xml:20:5-44
 MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/760dc1fe0defd2e2fec99d92d472ec0d/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:fresco:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/fresco-1.10.0.aar/760dc1fe0defd2e2fec99d92d472ec0d/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/fcd7f466dbf9dc9416ec1c016b066d46/AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-okhttp3:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-okhttp3-1.10.0.aar/fcd7f466dbf9dc9416ec1c016b066d46/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/54c9bc9f3cfee9b9b418a1ccc34575df/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:drawee:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/drawee-1.10.0.aar/54c9bc9f3cfee9b9b418a1ccc34575df/AndroidManifest.xml:5:5-7:41
 MERGED from [com.facebook.fresco:imagepipeline:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/imagepipeline-1.10.0.aar/891047c6ab24a45ae0bcb4d81eb821de/AndroidManifest.xml:5:5-7:41
@@ -206,14 +209,16 @@ INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [:react-native-launch-navigator] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-launch-navigator/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:23:5-79
+MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from [:react-native-launch-navigator] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-launch-navigator/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:7:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
 ADDED from [:react-native-maps] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-maps/lib/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:10:5-81
 	android:name
 		ADDED from [:react-native-maps] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-maps/lib/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:10:22-78
-uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:23:5-79
-	android:name
-		ADDED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:23:22-76
 uses-feature#0x00020000
 ADDED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:26:5-28:35
 	android:glEsVersion

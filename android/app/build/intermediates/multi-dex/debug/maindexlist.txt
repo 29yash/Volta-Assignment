@@ -255,3 +255,4 @@ javax/inject/Named.class
 javax/inject/Qualifier.class
 javax/inject/Scope.class
 javax/inject/Singleton.class
+uk/co/workingedge/RNLaunchNavigator/RNLaunchNavigatorPackage.class

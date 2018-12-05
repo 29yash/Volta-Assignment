@@ -15,7 +15,6 @@
     "react-native-autocomplete-input": "^3.6.0",
     "react-native-launch-navigator": "^1.0.2",
     "react-native-maps": "^0.22.1",
-    "react-native-open-maps": "^0.3.2",
     "react-native-progress": "^3.5.0",
     "react-native-router-flux": "^4.0.6"
   },
