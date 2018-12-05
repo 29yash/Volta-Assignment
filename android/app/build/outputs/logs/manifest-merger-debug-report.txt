@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
 MERGED from [:react-native-launch-navigator] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-launch-navigator/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-9:12
 MERGED from [:react-native-maps] /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/node_modules/react-native-maps/lib/android/build/intermediates/manifests/full/debug/AndroidManifest.xml:2:1-12:12
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:17:1-32:12
@@ -34,20 +34,20 @@ MERGED from [android.arch.lifecycle:viewmodel:1.1.0] /Users/yashmahajan/.gradle/
 MERGED from [com.facebook.fresco:fbcore:1.10.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/fbcore-1.10.0.aar/6a7bf902db2305b0aa0cc01039504797/AndroidManifest.xml:2:1-9:12
 MERGED from [android.arch.lifecycle:runtime:1.1.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/512f04c8c79cd3a2f799993c002cc75c/AndroidManifest.xml:17:1-22:12
 MERGED from [android.arch.core:runtime:1.1.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/runtime-1.1.0.aar/69de76fb3a095c15da25746c9905d116/AndroidManifest.xml:17:1-22:12
-INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
-INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
+INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
+INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
 	package
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:2:5-24
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 	android:versionName
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 	android:versionCode
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12
 		INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
 	xmlns:android
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:11-69
@@ -74,7 +74,7 @@ ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/ap
 	android:name
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:7:22-76
 application
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:9:5-29:19
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:9:5-30:19
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:30:5-20
 MERGED from [com.google.android.gms:play-services-maps:16.0.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-maps-16.0.0.aar/ea57f11d5c4f5d9cd1ed663950bec7b6/AndroidManifest.xml:30:5-20
 MERGED from [com.google.android.gms:play-services-base:16.0.1] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/play-services-base-16.0.1.aar/0bd9d05621b0352652f411afd8971a37/AndroidManifest.xml:22:5-27:19
@@ -98,7 +98,7 @@ MERGED from [org.webkit:android-jsc:r174650] /Users/yashmahajan/.gradle/caches/t
 	android:label
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:11:7-39
 	android:icon
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:12:7-41
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:12:7-36
 	android:allowBackup
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:13:7-34
 	android:theme
@@ -112,29 +112,31 @@ ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/ap
 	android:name
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:16:9-54
 activity#com.volta.MainActivity
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:18:7-27:18
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:18:7-28:18
 	android:label
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:20:9-41
 	android:windowSoftInputMode
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:22:9-48
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:23:9-48
 	android:configChanges
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:21:9-79
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:22:9-79
+	android:theme
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:21:9-43
 	android:name
 		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:19:9-37
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:23:9-26:25
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:24:9-27:25
 action#android.intent.action.MAIN
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:24:13-65
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:25:13-65
 	android:name
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:24:21-62
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:25:21-62
 category#android.intent.category.LAUNCHER
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:25:13-73
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:26:13-73
 	android:name
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:25:23-70
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:26:23-70
 activity#com.facebook.react.devsupport.DevSettingsActivity
-ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:28:7-84
+ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:29:7-84
 	android:name
-		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:28:17-81
+		ADDED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:29:17-81
 uses-sdk
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml
@@ -250,8 +252,8 @@ MERGED from [com.android.support:support-media-compat:26.1.0] /Users/yashmahajan
 	android:name
 		ADDED from [com.android.support:support-v4:26.1.0] /Users/yashmahajan/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/aaf0c86b48b52c624bf3833a727df04f/AndroidManifest.xml:27:13-51
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-IMPLIED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_PHONE_STATE
-IMPLIED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
+IMPLIED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc has a targetSdkVersion < 4
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-IMPLIED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-31:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
+IMPLIED from /Users/yashmahajan/Documents/MySJSU/Volta/Volta-Assignment/android/app/src/main/AndroidManifest.xml:1:1-32:12 reason: org.webkit.android_jsc requested WRITE_EXTERNAL_STORAGE
